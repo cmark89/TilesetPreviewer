@@ -94,7 +94,7 @@ public class TilesetPreviewer {
 
 			FileNameExtensionFilter imageFilter = new FileNameExtensionFilter("Images",
 				ImageIO.getReaderFileSuffixes());
-			chooser.addChoosableFileFilter(imageFilter);
+			chooser.setFileFilter(imageFilter);
 			chooser.setAcceptAllFileFilterUsed(false);
 
 			int returnValue = chooser.showOpenDialog(frame);
