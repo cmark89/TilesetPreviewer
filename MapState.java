@@ -16,7 +16,7 @@ public class MapState {
 "xxxxxxxxxxxxxxx\n" +
 "xx<xxx   xxxxxx\n" +
 "xx xx      xxxx\n" +
-"xx  xx        x\n" +
+"xx  xx x      x\n" +
 "xx  x        xx\n" +
 "xxx=xxx   x   x\n" +
 "x     x  xxxxxx\n" +

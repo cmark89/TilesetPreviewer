@@ -13,10 +13,17 @@ public class TilesetPreviewer {
 	static boolean showingGrid = false;
 
 	public static void main(String[] args) {
-		new TilesetPreviewer().buildGUI();
+		TilesetPreviewer program = new TilesetPreviewer();
+		program.buildGUI();
+		program.trySetTilesetInternal("resources/DeadCylinderTileset.png");
 	}
 
 	public TilesetPreviewer() {
+		try {
+			UIManager.setLookAndFeel("com.sun.java.swing.plat.windows.WindowsLookAndFeel");	
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		mapState = new MapState();
 	}
 
@@ -74,10 +81,16 @@ public class TilesetPreviewer {
 		frame.repaint();
 	}
 
+	private void trySetTilesetInternal(String s) {
+		currentTileset = new Tileset();
+		mapState.refresh();
+		frame.repaint();
+	}
+
 	class OpenTextureListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			JFileChooser chooser = new JFileChooser();
+			JFileChooser chooser = new JFileChooser(new File("").getAbsolutePath());
 
 			FileNameExtensionFilter imageFilter = new FileNameExtensionFilter("Images",
 				ImageIO.getReaderFileSuffixes());
