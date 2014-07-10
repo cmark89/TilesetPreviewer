@@ -10,10 +10,32 @@ public class DrawCell {
 	ArrayList<Integer> overlayIndices = new ArrayList<Integer>();
 
 	public DrawCell(int xPos, int yPos, int baseIndex) {
+		positionX = xPos;
+		positionY = yPos;
 		baseDrawIndex = 0;
 	}
 
-	public void paint(Graphics g) {
-		// Draw that part of the image here
+	public void addIndex(int i) {
+		overlayIndices.add(i);
+	}
+
+	public void clearIndices() {
+		overlayIndices = new ArrayList<Integer>();
+	}
+
+	public int getBaseIndex() {
+		return baseDrawIndex;
+	}
+
+	public ArrayList<Integer> getOtherIndices() {
+		return overlayIndices;
+	}
+
+	public int getX() {
+		return positionX;
+	}
+
+	public int getY() {
+		return positionY;
 	}
 }
